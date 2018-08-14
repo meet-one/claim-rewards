@@ -27,13 +27,10 @@ var ClaimRewards = {
       'code': 'eosio',
       'scope': 'eosio',
       'table': 'producers',
-      'lower_bound': 'eosiomeetone',
+      'lower_bound': this.producerName,
       'limit': '1'
     }).then(function (result) {
-
       var last_claim_time = result.rows[0].last_claim_time / 1000;
-      console.log(Date.now());
-      console.log(last_claim_time);
       if (Date.now() - last_claim_time >= 24 * 60 * 60 * 1000) {
         console.log('claim reward:', new Date());
         self.claimReward();
@@ -69,7 +66,7 @@ var ClaimRewards = {
       var self = this;
       self.eos.getCurrencyBalance({
         'code': 'eosio.token',
-        'account': 'eosiomeetone',
+        'account': self.producerName,
       }).then(function (res) {
         console.log(res[0]);
         self.sendMessage(dateToString, res[0]);
@@ -84,7 +81,7 @@ var ClaimRewards = {
     var params = {
       "msgtype": "text",
       "text": {
-        "content": date + ", EOS BP eosiomeetone claim reward, the balance of account eosiomeetone is " + balance
+        "content": date + ", EOS.IO BP " + self.producerName + " claim reward, the balance of account " + self.producerName + " is " + balance
       }
     };
     var options = {
