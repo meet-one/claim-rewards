@@ -63,12 +63,10 @@ var ClaimRewards = {
       // get account balance after claim reward.
       var date = new Date();
       var dateToString = (date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate());
-      var self = this;
       self.eos.getCurrencyBalance({
         'code': 'eosio.token',
         'account': self.producerName,
       }).then(function (res) {
-        console.log(res[0]);
         self.sendMessage(dateToString, res[0]);
       });
     }, function (err) {
@@ -81,7 +79,7 @@ var ClaimRewards = {
     var params = {
       "msgtype": "text",
       "text": {
-        "content": date + ", EOS.IO BP " + self.producerName + " claim reward, the balance of account " + self.producerName + " is " + balance
+        "content": date + ", EOS.IO BP " + this.producerName + " claim reward, the balance of account " + this.producerName + " is " + balance
       }
     };
     var options = {
