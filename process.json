@@ -1,0 +1,14 @@
+{
+  "apps": [
+    {
+      "name": "node-claimrewards-production",
+      "script": "index.js",
+      "exec_mode": "cluster",
+      "instances": 0,
+      "merge_logs": true,
+      "log_date_format": "YYYY-MM-DD HH:mm:ss Z",
+      "out_file": "/data/logs/out_file",
+      "error_file": "/data/logs/node-claimrewards-stderr-production.log"
+    }
+  ]
+}
