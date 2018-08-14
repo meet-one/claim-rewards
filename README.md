@@ -25,5 +25,5 @@ node index.js
 ## Start with PM2
 
 ```
-npm prune --D && npm install --D; NODE_ENV=production PORT=5555 pm2 reload process.json --only node-claimrewards-production
+npm install --D; NODE_ENV=production PORT=5555 pm2 start process.json --only node-claimrewards-production
 ```
