@@ -37,11 +37,11 @@ var ClaimRewards = {
       } else {
         console.log('can not claim reward right now.');
       }
-
-      setTimeout(function () {
-        self.detectLastClaimTime();
-      }, 1000 * 10);
     });
+
+    setTimeout(function () {
+      self.detectLastClaimTime();
+    }, 1000 * 10);
   },
   claimReward: function () {
     var self = this;
