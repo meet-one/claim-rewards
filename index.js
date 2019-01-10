@@ -30,7 +30,7 @@ var ClaimRewards = {
       'lower_bound': this.producerName,
       'limit': '1'
     }).then(function (result) {
-      var last_claim_time = result.rows[0].last_claim_time / 1000;
+      var last_claim_time = new Date(result.rows[0].last_claim_time).getTime();
       if (Date.now() - last_claim_time >= 24 * 60 * 60 * 1000) {
         console.log('claim reward:', new Date());
         self.claimReward();
