@@ -9,8 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eosjs": "^16.0.0",
-    "request": "^2.88.0"
+    "eosjs": "^16.0.0"
   },
   "dependencies": {}
 }
