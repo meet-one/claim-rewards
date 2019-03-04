@@ -141,7 +141,7 @@ module.exports = {
       })
     }).then((res) => {
       if (res.ok) {
-        console.log('Meesage sent!')
+        console.log('Message sent!')
       } else {
         console.log('status = ' + res.status)
       }
