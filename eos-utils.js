@@ -115,7 +115,7 @@ module.exports = {
           'code': 'eosio.token'
           , 'account': self.producerName
         }).then((res) => {
-          self.sendMeesage(self.dingtalkToken, date + ', claimed rewards on '
+          sendMeesage(self.dingtalkToken, date + ', claimed rewards on '
             + self.chainName + ', ' + self.producerName + ' : ' + res[0] + '.')
         })
       }, (err) => {
@@ -125,7 +125,7 @@ module.exports = {
     }
   }
 
-  , sendMeesage: (token, text) => {
+  , sendMessage: (token, text) => {
     const fetch = require('node-fetch')
 
     fetch('https://oapi.dingtalk.com/robot/send?access_token=' + token, {
