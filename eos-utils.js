@@ -115,7 +115,7 @@ module.exports = {
           'code': 'eosio.token'
           , 'account': self.producerName
         }).then((res) => {
-          sendMeesage(self.dingtalkToken, date + ', claimed rewards on '
+          sendMessage(self.dingtalkToken, date + ', claimed rewards on '
             + self.chainName + ', ' + self.producerName + ' : ' + res[0] + '.')
         })
       }, (err) => {
