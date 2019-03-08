@@ -73,12 +73,12 @@ module.exports = {
           // Check 10s later to ensure success
           nextClaimDiff = 10 * 1000
           console.log('Last claim rewards from ' + self.chainName + ' on '
-            + lastClaimTime + ', claiming on ' + now + '.')
+            + lastClaimTime.toJSON() + ', claiming on ' + now + '.')
           self.claimRewards();
         } else {
           nextClaimDiff = MS_PER_DAY - (now - lastClaimTime)
           console.log('Last claim rewards from ' + self.chainName + ' on '
-            + lastClaimTime + ', can not claim right now.')
+            + lastClaimTime.toJSON() + ', can not claim right now.')
         }
         console.log('Will claim after ' + nextClaimDiff + 'ms.')
 
