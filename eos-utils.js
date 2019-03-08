@@ -109,13 +109,11 @@ module.exports = {
       }).then(function () {
         // get account balance after claim reward.
         let date = new Date()
-        let dateString = (date.getFullYear() + '-' + (date.getMonth() + 1)
-          + '-' + date.getDate())
         self.eos.getCurrencyBalance({
           'code': 'eosio.token'
           , 'account': self.producerName
         }).then((res) => {
-          module.exports.sendMessage(self.dingtalkToken, date
+          module.exports.sendMessage(self.dingtalkToken, date.toJSON()
             + ', claimed rewards on ' + self.chainName + ', '
             + self.producerName + ' : ' + res[0] + '.')
         })
